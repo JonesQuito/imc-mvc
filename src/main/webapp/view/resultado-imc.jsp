@@ -28,11 +28,10 @@
 				<label>Situação:</label>
 				${situacao}
 			</div>
-			<a href="${url}">Novo Calculo</a>
-
+			<a href="controllerimc">Novo Calculo</a>
+			<!-- ${url} -->
 		</div>
 	</div>
-
 
 </body>
 </html>

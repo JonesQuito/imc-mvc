@@ -21,13 +21,13 @@ public class ControllerImc extends HttpServlet {
 		String sexo = request.getParameter("sexo");
 		
 		if((pesoStr == null) || (alturaStr == null) || (sexo == null)){
-			request.getRequestDispatcher("form-imc.jsp").forward(request, response);
+			request.getRequestDispatcher("view/form-imc.jsp").forward(request, response);
 		}
 		else if ((pesoStr.isEmpty()) || (alturaStr.isEmpty()) || (sexo.isEmpty())) {
 
 			request.setAttribute("erro", "campo obrigatório não preenchido!");
-			request.setAttribute("url", "form-imc.jsp");
-			request.getRequestDispatcher("/erroPage.jsp").forward(request, response);
+			request.setAttribute("url", "view/form-imc.jsp");
+			request.getRequestDispatcher("view/erroPage.jsp").forward(request, response);
 		}
 		else{
 			double peso = Double.parseDouble(pesoStr);
@@ -36,8 +36,8 @@ public class ControllerImc extends HttpServlet {
 			Imc imc = new Imc(peso, altura, sexo);
 			request.setAttribute("situacao", imc.getSituacao());
 			request.setAttribute("imc", imc.getImc());
-			request.setAttribute("url", "form-imc.jsp");
-			request.getRequestDispatcher("resultado-imc.jsp").forward(request, response);
+			request.setAttribute("url", "view/form-imc.jsp");
+			request.getRequestDispatcher("view/resultado-imc.jsp").forward(request, response);
 		}		
 
 	}

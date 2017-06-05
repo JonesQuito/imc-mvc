@@ -31,7 +31,8 @@
 			<div class="alert alert-success" role="alert"
 				style="margin-top: 45px">${erro}</div>
 
-			<a href="${url}">Tentar novamente</a>
+			<a href="controllerimc">Tentar novamente</a>
+			<!--${url}-->
 
 		</div>
 	</div>
